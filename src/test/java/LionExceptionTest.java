@@ -12,14 +12,13 @@ public class LionExceptionTest {
     Feline feline;
 
     @Test
-    public void createWrongLion() {
+    public void createWrongLion() throws Exception {
         try {
             new Lion("Саме", feline);
-        } catch (Exception thrown) {
-            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка",
+            Assert.fail("Ожидалось появление исключения");
+                    } catch (Exception thrown) {
+                        Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка",
                     thrown.getMessage());
     }
     }
-
-
 }
